@@ -8,18 +8,13 @@ const bcrypt = require('bcrypt');
 const { db, User } = require('./models');
 const routes = require('./routes');
 
-const db = new Sequelize('project_web', 'user', 'root', {
-    host: 'localhost',
-    dialect: 'mysql'
-});
-
 passport.use(new LocalStrategy((username, password, callback) => {
     User
         .findOne({ username })
         .then((user) => {
             if (!user) {
                 return callback(null, false, {
-                    message: `No user account found for "${username}"`
+                    message: 'No user account found for "${username}"'
                 });
             }
 
@@ -34,7 +29,6 @@ passport.use(new LocalStrategy((username, password, callback) => {
             });
         });
 }));
-
 passport.serializeUser((user, callback) => {
     callback(null, user.id);
 });
@@ -47,7 +41,7 @@ passport.deserializeUser((id, callback) => {
         .catch(callback);
 });
 
-const COOKIE_SECRET = '';
+const COOKIE_SECRET = '5h*qy0qm5#89Mzjh';
 const app = express();
 
 app.set('view engine', 'pug');
@@ -56,12 +50,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret: COOKIE_SECRET, resave: false, saveUninitialized: false }));
 app.use(express.static('public'));
 
+
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(routes);
 
 db.sync().then(() => {
-    app.listen(3000, () => {
-    });
+    app.listen(3000);
 });
