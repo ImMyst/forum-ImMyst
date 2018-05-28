@@ -1,22 +1,7 @@
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const Sequelize = require('sequelize');
-
-const db = new Sequelize('project_web', 'user', 'root', {
-    host: 'localhost',
-    dialect: 'mysql'
-});
-
-
-app.set('view engine', 'pug');
-app.use(bodyParser.urlencoded({ extended: true }));
-app.set('views', 'public/views')
-app.use(express.static('public'));
-
-app.get('/question', (req, res) => {
-    res.render('question');
-});
+const router = require('express').Router();
+const passport = require('passport');
+const bcrypt = require('bcrypt');
+const { Question, Comment, User } = require('../models');
 
 const Question = db.define('questions', {
         title : { type: Sequelize.STRING},
@@ -25,7 +10,7 @@ const Question = db.define('questions', {
         resolved_at : { type: Sequelize.DATE }
       });
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     Question
         .sync()
         .then(()=> {
@@ -37,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 
- app.post('/api/post/question', (req, res) => {
+ router.post('/api/post/question', (req, res) => {
      const { title, description, user_id, resolved_at } = req.body;
      Question
          .sync()
@@ -45,13 +30,8 @@ app.get('/', (req, res) => {
          .then(() => res.redirect('/'))
  });
 
- const Comment = db.define('comments', {
-         question_id : { type: Sequelize.INTEGER},
-         content : { type: Sequelize.STRING },
-         user_id : { type: Sequelize.INTEGER }
-       });
 
- app.get('/', (req, res) => {
+ router.get('/', (req, res) => {
      Comment
          .sync()
          .then(()=> {
@@ -63,13 +43,10 @@ app.get('/', (req, res) => {
  });
 
 
-  app.post('/api/post/comment', (req, res) => {
+  router.post('/api/post/comment', (req, res) => {
       const { question_id, content, user_id } = req.body;
       Comment
           .sync()
           .then(() => Comment.create({ question_id, content, user_id }))
           .then(() => res.redirect('/'))
   });
-
-
-app.listen(3000);
