@@ -1,16 +1,18 @@
 const Sequelize = require('sequelize');
 
 function defineUser(db) {
-    const User = db.define('user', {
-        fullname: { type: Sequelize.STRING },
-        username: { type: Sequelize.STRING },
-        password: { type: Sequelize.STRING }
-    });
-    User.associate = ({ Question, Comment }) => {
+
+  const User = db.define('user', {
+          fullname: { type: Sequelize.STRING },
+          username: { type: Sequelize.STRING },
+          password: { type: Sequelize.STRING }
+  });
+
+  User.associate = ({ Question, Comment }) => {
         User.hasMany(Question);
         User.hasMany(Comment);
-    };
-    return User;
+  };
+  return User;
 }
 
 module.exports = defineUser;

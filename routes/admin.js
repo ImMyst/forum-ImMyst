@@ -8,7 +8,7 @@ router.get('/questions/new', (req, res) => {
 router.post('/questions/new', (req, res) => {
     const { title, description, resolved_at, user_id } = req.body;
     Question
-        .create({ title, description, resolved_at user_id: req.user.id })
+        .create({ title, description, resolved_at, user_id: req.user.id })
         .then(() => {
             res.redirect('/');
         });

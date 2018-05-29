@@ -3,50 +3,78 @@ const passport = require('passport');
 const bcrypt = require('bcrypt');
 const { Question, Comment, User } = require('../models');
 
-const Question = db.define('questions', {
-        title : { type: Sequelize.STRING},
-        description : { type: Sequelize.STRING },
-        user_id : { type: Sequelize.INTEGER },
-        resolved_at : { type: Sequelize.DATE }
-      });
-
-router.get('/', (req, res) => {
+router.get('/home', (req, res) => {
     Question
-        .sync()
-        .then(()=> {
-          return Question.findAll();
-        })
-        .then((questions) => {
-            res.render('activity', { questions });
+            res.render('home');
+        });
+
+
+router.get('/login', (req, res) => {
+    if (req.user) {
+        return res.redirect('/');
+    }
+
+    res.render('login');
+});
+
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login'
+}));
+
+router.post('/login', (req, res) => {
+    const { fullname, username, password } = req.body;
+    bcrypt
+        .hash(password, 12)
+        .then((hash) => {
+            User
+                .create({ fullname, username, password: hash })
+                .then((user) => {
+                    req.login(user, () => res.redirect('/'));
+                });
         });
 });
 
+router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+});
 
- router.post('/api/post/question', (req, res) => {
-     const { title, description, user_id, resolved_at } = req.body;
-     Question
-         .sync()
-         .then(() => Question.create({ title, description, user_id, resolved_at }))
-         .then(() => res.redirect('/'))
- });
+router.get('/questions/:questionId', (req, res) => {
+    Question
+        .findById(req.params.questionId, {
+            include: [
+                User,
+                {
+                    model: Comment,
+                    include: [User]
+                }
+            ]
+        })
+        .then((question) => {
+            res.render('question', { question, loggedInUser: req.user });
+        });
+});
 
+router.post('/questions/:questionId', (req, res) => {
+    const { content } = req.body;
+    Comment
+        .create({
+            content,
+            userId: req.user.id,
+            questionId: req.params.questionId
+        })
+        .then(() => {
+            res.redirect(`/questions/${req.params.questionId}`);
+        });
+});
 
- router.get('/', (req, res) => {
-     Comment
-         .sync()
-         .then(()=> {
-           return Comment.findAll();
-         })
-         .then((comments) => {
-             res.render('activity', { comments });
-         });
- });
+router.get('/profile/:userId', (req, res) => {
+    User
+        .findById(req.params.userId, { include: [Question] })
+        .then((user) => {
+            res.render('profile', { user, loggedInUser: req.user });
+        });
+});
 
-
-  router.post('/api/post/comment', (req, res) => {
-      const { question_id, content, user_id } = req.body;
-      Comment
-          .sync()
-          .then(() => Comment.create({ question_id, content, user_id }))
-          .then(() => res.redirect('/'))
-  });
+module.exports = router;
