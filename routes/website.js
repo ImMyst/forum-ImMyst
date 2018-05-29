@@ -5,7 +5,7 @@ const { Question, Comment, User } = require('../models');
 
 router.get('/home', (req, res) => {
     Question
-            res.render('activity');
+            res.render('home');
         });
 
 
