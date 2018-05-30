@@ -8,7 +8,6 @@ router.get('/home', (req, res) => {
             res.render('home');
         });
 
-
 router.get('/login', (req, res) => {
     if (req.user) {
         return res.redirect('/');
