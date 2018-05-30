@@ -3,14 +3,14 @@ const passport = require('passport');
 const bcrypt = require('bcrypt');
 const { Question, Comment, User } = require('../models');
 
-router.get('/home', (req, res) => {
+router.get('/add-question', (req, res) => {
     Question
-            res.render('home');
+            res.render('add-question');
         });
 
 router.get('/login', (req, res) => {
     if (req.user) {
-        return res.redirect('/');
+        return res.redirect('/addquestion');
     }
 
     res.render('login');
@@ -21,37 +21,52 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/login'
 }));
 
-router.post('/login', (req, res) => {
-    const { fullname, username, password } = req.body;
+router.get('/register', (req, res) => {
+    if (req.user) {
+        return res.redirect('/login');
+    }
+
+    res.render('register');
+});
+
+router.post('/register', (req, res) => {
+    const { email, username, password } = req.body;
     bcrypt
         .hash(password, 12)
         .then((hash) => {
             User
-                .create({ fullname, username, password: hash })
+                .create({ email, username, password: hash })
                 .then((user) => {
-                    req.login(user, () => res.redirect('/'));
+                    req.register(user, () => res.redirect('/login'));
                 });
         });
 });
 
-router.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
-});
+// router.get('/addquestion', (req, res) => {
+//     Question
+//         .findById(req.params.questionId, {
+//             include: [
+//                 User,
+//                 {
+//                     model: Comment,
+//                     include: [User]
+//                 }
+//             ]
+//         })
+//         .then((question) => {
+//             res.render('addquestion', { question, loggedInUser: req.user });
+//         });
+// });
 
-router.get('/questions/:questionId', (req, res) => {
+router.post('/addquestion', (req, res) => {
     Question
-        .findById(req.params.questionId, {
-            include: [
-                User,
-                {
-                    model: Comment,
-                    include: [User]
-                }
-            ]
+        .create({
+              title,
+              description,
+
         })
         .then((question) => {
-            res.render('question', { question, loggedInUser: req.user });
+            res.render('addquestion', { question, loggedInUser: req.user });
         });
 });
 

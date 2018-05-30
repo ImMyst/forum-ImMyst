@@ -1,0 +1,52 @@
+// ## STYLEGUIDE ## //
+
+$menu-item: #00AEEF;
+
+$h1-color: #393C3E;
+
+$p-family: Source Sans Pro;
+$p-size: 12px;
+$p-height: 22px;
+$p-color: #71787E;
+
+// ### END STYLEGUIDE ### //
+
+
+// ## NAVBAR SASS ## //
+
+$border: solid #DFE3E9 1px;
+$back-color: #EFF3F6;
+
+// ## END NAVBAR SASS ## //
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: $back-color;
+  font-family: $p-family;
+  }
+
+.navbar {
+  background-color: #FFFFFF;
+  border-bottom: $border;
+  width: 100vw;
+  height: 4vw;
+
+  ul {
+    display: flex;
+    padding: 17px;
+
+    li {
+      list-style: none;
+      padding-right: 5px;
+    }
+  }
+
+}

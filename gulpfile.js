@@ -8,6 +8,7 @@ const minify = require('gulp-minify-css');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
+const exec = require('child_process').exec;
 
 // Convert all sass files to css
 
@@ -16,8 +17,7 @@ gulp.task('sass', function() {
     .pipe(sass())
     .pipe(gulp.dest('public/css'))
       stream: true
-    }))
-});
+    });
 
 
 gulp.task('watch', ['sass'], function(){
@@ -25,19 +25,23 @@ gulp.task('watch', ['sass'], function(){
   gulp.watch('views/*pug');
 });
 
-
-// gulp.task('browserSync', function() {
-//   browserSync({
-//     server: {
-//       baseDir: 'public'
-//     },
-//   })
-// })
-
+gulp.task('server', (cb) => {
+    exec('npm start', (err, stdout, stderr) => {
+        console.log(stdout);
+        console.log(stderr);
+        cb(err);
+    });
+})
 
 gulp.task('css', function(){
    gulp.src('public/css/*.css')
    .pipe(concat('styles.css'))
    .pipe(minify())
    .pipe(gulp.dest('build/styles/'));
+});
+
+gulp.task("default", function () {
+  gulp.start("server");
+  gulp.start("watch");
+  gulp.start("sass");
 });
