@@ -1,0 +1,250 @@
+
+// ## STYLEGUIDE ## //
+
+// 01 COLOUR PALETTE  //
+$menu-item: #00AEEF;
+$logo-hover: #FECF39;
+$label-topbar: #FFDF6D;
+$label-picture: #DBDBDB;
+$search-box: #81736A;
+$profile-bar: #00AEEF;
+$error-link: #FFA2AD;
+$success-link: #74C7A8;
+$success-max: #00797A;
+$violet: #8781BD;
+
+// 02 TYPOGRAPHY //
+$h1-family: Source Sans Pro Semibold;
+$h1-size: 32px;
+$h1-height: 44px;
+$h1-color: #393C3E;
+
+$h2-family: Source Sans Pro;
+$h2-size: 22px;
+$h2-height: 32px;
+$h2-color: #393C3E;
+
+$h3-family: Source Sans Pro;
+$h3-size: 20px;
+$h3-height: 28px;
+$h3-color: #393C3E;
+
+$p-family: Source Sans Pro;
+$p-size: 12px;
+$p-height: 22px;
+$p-color: #71787E;
+
+$ap-family: Source Sans Pro;
+$ap-size: 10px;
+$ap-height: 20px;
+$ap-color: #71787E;
+
+$link-family: Source Sans Pro Semibold;
+$link-size: 16px;
+$link-height: 24px;
+$link-color: #00AEEF;
+
+// ### END STYLEGUIDE ### //
+
+
+// ## LOGIN SASS ## //
+
+$border: solid #DFE3E9 1px;
+$back-color: #EFF3F6;
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+ background-color: $back-color;
+ font-family: $p-family;
+}
+
+.login-container {
+  background-color: white;
+  margin-left: 560px;
+  margin-right: 560px;
+  margin-top: 160px;
+  border: $border;
+  border-radius: 2px;
+}
+
+.account {
+  position: absolute;
+  transform: scale(3);
+  color: #1b92ec;
+  left: 50%;
+  margin-top: -15px;
+}
+
+.title {
+  background-color: #f8fafc;
+  color: #393c3e;
+  font-weight: 300;
+  font-size: 20px;
+  border-bottom: $border;
+  padding-top: 45px;
+
+}
+
+h3 {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+}
+
+form {
+  margin-top: 25px;
+  color: $h1-color;
+}
+
+span {
+  font-size: $p-size;
+  font-weight: 600;
+  color: $p-color;
+  line-height: $p-height;
+}
+
+input {
+  font-family: $h1-color;
+  padding: 10px;
+  border: $border;
+  border-radius: 5px;
+  background-color: #f8fafc;
+  display: inline-block;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+input:focus {
+  background-color: #edeff2;
+}
+
+.login-button {
+  font-family: $h1-color;
+  font-size: $p-size;
+  font-weight: 600;
+  line-height: $p-height;
+  color: white;
+  padding-right: 241px;
+  background-color: #34ac45;
+  border: solid #249533 1px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.login-button:hover {
+  background-color: #1e960a;
+}
+
+.login-button:active {
+  background-color: #1a760a;
+}
+
+.networks {
+  background-color: white;
+  display: block;
+  text-align: center;
+  margin-top: -21px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-bottom: $border;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+button {
+  transform: scale(0.9);
+  border: none;
+  border-radius: 5px;
+
+}
+
+.twitter {
+  background-color: #08acff;
+}
+
+.twitter:hover {
+  background-color: #4ac2ff;
+}
+
+.twitter:active {
+  background-color: #26a6e7;
+}
+
+.facebook {
+  background-color: #1382d6;
+}
+
+.facebook:hover {
+  background-color: #2391e3;
+}
+
+.facebook:active {
+  background-color: #0e65a7;
+}
+
+.pinterest {
+  background-color: #db4226;
+}
+
+.pinterest:hover {
+  background-color: #f35337;
+}
+
+.pinterest:active {
+  background-color: #ac351f;
+}
+
+.dribbble {
+  background-color: #d43471;
+}
+
+.dribbble:hover {
+  background-color: #ea4c89;
+}
+
+.dribbble:active {
+  background-color: #b32c5f;
+}
+
+img {
+  transform: scale(0.5);
+}
+
+.endo {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 560px;
+    margin-right: 560px;
+    padding-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  font-size: $p-size;
+  font-weight: 600;
+  color: $p-color;
+}
+
+a:hover {
+  text-decoration: underline;
+}

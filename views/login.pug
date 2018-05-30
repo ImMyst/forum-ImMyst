@@ -4,6 +4,7 @@ html
     link(rel="stylesheet" href="/css/login.css")
     link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet")
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+      
 
   body
     main
@@ -13,13 +14,22 @@ html
           h3 Welcome! Please login.
         div(class="form")
           form(action="/")
-            a Login with your e-mail address
+            span Login with your e-mail address
             input(type="email" name="mail")
-            a Password
+            span Password
             input(type="password" name="password")
             input(class="login-button" type="submit" value="Login to Questions")
         hr 
-        a(class="networks") Login via social networks
-        
-          
-          
+        span(class="networks") Login via social networks
+        div(class="icons")
+          button(class="twitter")
+            img(class="tw-icon" src="/icons/twitter.png")
+          button(class="facebook")
+            img(class="fa-icon" src="/icons/facebook.png")
+          button(class="pinterest")
+            img(class="pin-icon" src="/icons/pinterest.png")
+          button(class="dribbble")
+            img(class="dri-icon" src="/icons/dribbble.png")
+      div(class="endo")
+        a(href="/register") Don't have any account yet? Get Started
+        a(href="#") Forgot password?
