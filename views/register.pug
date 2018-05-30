@@ -1,7 +1,7 @@
 html
   head
-    title Stock Overflowx - Login
-    link(rel="stylesheet" href="/css/login.css")
+    title Stock Overflowx - Register
+    link(rel="stylesheet" href="/css/register.css")
     link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet")
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
       
@@ -11,16 +11,20 @@ html
       div(class="login-container")
         i(class="material-icons account") account_circle
         div(class="title")
-          h3 Welcome! Please login.
+          h3 Welcome! Please register.
         div(class="form")
           form(action="/")
-            span Login with your e-mail address
-            input(type="email" name="mail" placeholder="exemple@exemple.com")
+            span E-mail address
+            input(type="email" name="email" placeholder="exemple@exemple.com")
+            span Username
+            input(type="text" name="username" placeholder="Username")
             span Password
+            input(type="password" name="password")
+            span Confirm Password
             input(type="password" name="password")
             input(class="login-button" type="submit" value="Login to Questions")
         hr 
-        span(class="networks") Login via social networks
+        span(class="networks") Register via social networks
         div(class="icons")
           button(class="twitter")
             img(class="tw-icon" src="/icons/twitter.png")
@@ -30,6 +34,3 @@ html
             img(class="pin-icon" src="/icons/pinterest.png")
           button(class="dribbble")
             img(class="dri-icon" src="/icons/dribbble.png")
-      div(class="endo")
-        a(href="/register") Don't have any account yet? Get Started
-        a(href="#") Forgot password?

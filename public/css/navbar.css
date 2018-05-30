@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+html {
+  background-color: #EFF3F6;
+  font-family: Source Sans Pro; }
+
+.navbar {
+  background-color: #FFFFFF;
+  border-bottom: solid #DFE3E9 1px;
+  width: 100vw;
+  height: 4vw; }
+  .navbar ul {
+    display: flex;
+    padding: 17px; }
+    .navbar ul li {
+      list-style: none;
+      padding-right: 5px; }
