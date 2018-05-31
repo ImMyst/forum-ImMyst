@@ -36,17 +36,69 @@ html {
 .navbar {
   background-color: #FFFFFF;
   border-bottom: $border;
-  width: 100vw;
-  height: 4vw;
+  width: 100%;
+  height: 62px;
+
+  nav {
+    height: 62px;
+  }
 
   ul {
     display: flex;
     padding: 17px;
+    justify-content: space-around;
+    height: 62px;
 
     li {
       list-style: none;
-      padding-right: 5px;
+
+      a {
+        text-decoration: none;
+        padding: 5px;
+        color: $p-color;
+      }
+
+      a:hover {
+        border-radius: 3px;
+        background: linear-gradient(#f1f1f1, #e9e9e7);
+      }
+    }
+
+    li.logo-li {
+      position: relative;
+      bottom: 115px;
+      right: 240px;
+
+      button.logo {
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        transform: scale(0.15);
+        background: linear-gradient(#1992eb, #2ea1f8);
+
+          img.logo {
+            transform: scale(0.7);
+            background: linear-gradient(#1992eb, #2ea1f8);
+            }
+      }
+    }
+
+    li.questions-li {
+      position: relative;
+      right: 555px;
+    }
+
+    li.add-li {
+      position: relative;
+      right: 775px;
+    }
+
+    i {
+      position: relative;
+      left: 75px;
+      transform: scale(1.5);
+    }
+
     }
   }
-
-}
