@@ -1,9 +1,5 @@
 // ## STYLEGUIDE ## //
 
-$menu-item: #00AEEF;
-
-$h1-color: #393C3E;
-
 $p-family: Source Sans Pro;
 $p-size: 12px;
 $p-height: 22px;
@@ -59,7 +55,7 @@ html {
       }
 
       a:hover {
-        border-radius: 3px;
+        border-radius: 5px;
         background: linear-gradient(#f1f1f1, #e9e9e7);
       }
     }
@@ -73,7 +69,7 @@ html {
         text-decoration: none;
         border: none;
         cursor: pointer;
-        border-radius: 10px;
+        border-radius: 15px;
         transform: scale(0.15);
         background: linear-gradient(#1992eb, #2ea1f8);
 

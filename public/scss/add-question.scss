@@ -1,0 +1,116 @@
+
+
+$h1-family: Source Sans Pro;
+$h1-weight: 600;
+$h1-size: 32px;
+$h1-height: 44px;
+$h1-color: #393C3E;
+
+$h3-family: Source Sans Pro;
+$h3-size: 20px;
+$h3-height: 28px;
+$h3-color: #393C3E;
+
+$p-family: Source Sans Pro;
+$p-size: 16px;
+$p-height: 22px;
+$p-color: #71787E;
+
+$border: solid #DFE3E9 1px;
+
+
+body {
+  // background-image: url(https://cdn.discordapp.com/attachments/450559026338594827/450560148960706560/unknown.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  min-height: 100vh;
+}
+
+.title-container {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 29px;
+
+  h1 {
+    font-family: $h1-family;
+    font-size: $h1-size;
+    line-height: $h1-height;
+    color: $h1-color;
+    font-weight: $h1-weight;
+  }
+}
+
+.container {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 22px;
+  background-color: white;
+  border: $border;
+  border-radius: 5px;
+
+  h1 {
+  }
+
+    .text-container {
+      padding-left: 27px;
+
+      span {
+        color: $p-color;
+        font-size: $p-size;
+        line-height: $p-height;
+      }
+    }
+}
+
+h3.title {
+  font-size: $h3-size;
+  color: $h3-color;
+  line-height: $h3-height;
+
+}
+
+form {
+  margin-top: 50px;
+  color: $h1-color;
+  font-family: $h1-color;
+
+  input, textarea {
+    padding: 10px;
+    border: $border;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    width: 98%;
+    font-family: $p-family;
+    color: $p-color;
+    font-size: $p-size;
+    line-height: $p-height;
+  }
+
+  textarea {
+    min-height: 150px;
+  }
+
+  input:focus {
+    background-color: #edeff2;
+  }
+
+  input.add-question-button {
+    width: 15%;
+    background: linear-gradient(#39b44a,#34ab44);
+    color: white;
+    border: solid #249533 1px;
+    position: relative;
+    left: 83%;
+    cursor: pointer;
+  }
+
+  input.add-question-button:hover {
+    background: linear-gradient(#1e9c0a,#1b8a0a);
+  }
+
+  input.add-question-button:active {
+    background: linear-gradient(#1a760a,#145c07);
+  }
+}

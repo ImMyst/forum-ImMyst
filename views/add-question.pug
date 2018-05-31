@@ -1,8 +1,19 @@
 html
   head
     include navbar.pug
+    link(rel="stylesheet" href="css/add-question.css")
     link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet")
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
   
-  body
-    main
+    div(class="title-container")
+      h1 New Question  
+    div(class="container")
+        div(class="text-container")
+          div(class="form")
+            h3(class="title") Question
+            form 
+              span Title 
+              input(type="text" name="title" placeholder="Ex : How to use a flexbox ?")
+              span Description
+              textarea(type="text" name="description" placeholder="Ex : My flexbox did not work ?")
+              input(class="add-question-button" type="submit" value="Post Your Question") 
