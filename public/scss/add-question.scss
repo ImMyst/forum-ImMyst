@@ -48,9 +48,6 @@ body {
   border: $border;
   border-radius: 5px;
 
-  h1 {
-  }
-
     .text-container {
       padding-left: 27px;
 
@@ -83,7 +80,7 @@ form {
     margin-bottom: 2em;
     width: 98%;
     font-family: $p-family;
-    color: $p-color;
+    background-color: #f8fafc;
     font-size: $p-size;
     line-height: $p-height;
   }

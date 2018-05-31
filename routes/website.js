@@ -8,6 +8,11 @@ router.get('/add-question', (req, res) => {
             res.render('add-question');
         });
 
+router.get('/list-question', (req, res) => {
+    Question
+            res.render('list-question');
+        });
+
 router.get('/login', (req, res) => {
     if (req.user) {
         return res.redirect('/addquestion');
