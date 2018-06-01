@@ -59,13 +59,15 @@ form {
     line-height: 22px; }
   form .login-button {
     font-size: 12px;
+    font-weight: 600;
     line-height: 22px;
     color: white;
     padding-right: 241px;
     background-color: #34ac45;
     border: solid #249533 1px;
     border-radius: 6px;
-    text-align: center; }
+    text-align: center;
+    cursor: pointer; }
   form .login-button:hover {
     background-color: #1e960a; }
   form .login-button:active {
@@ -103,7 +105,8 @@ button {
   background-color: #08acff; }
 
 .twitter:hover {
-  background-color: #4ac2ff; }
+  background-color: #4ac2ff;
+  transform: scale(1); }
 
 .twitter:active {
   background-color: #26a6e7; }
@@ -112,7 +115,8 @@ button {
   background-color: #1382d6; }
 
 .facebook:hover {
-  background-color: #2391e3; }
+  background-color: #2391e3;
+  transform: scale(1); }
 
 .facebook:active {
   background-color: #0e65a7; }
@@ -121,7 +125,8 @@ button {
   background-color: #db4226; }
 
 .pinterest:hover {
-  background-color: #f35337; }
+  background-color: #f35337;
+  transform: scale(1); }
 
 .pinterest:active {
   background-color: #ac351f; }
@@ -130,7 +135,8 @@ button {
   background-color: #d43471; }
 
 .dribbble:hover {
-  background-color: #ea4c89; }
+  background-color: #ea4c89;
+  transform: scale(1); }
 
 .dribbble:active {
   background-color: #b32c5f; }
