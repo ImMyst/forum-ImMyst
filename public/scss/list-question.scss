@@ -10,6 +10,11 @@ $p-size: 12px;
 $p-height: 22px;
 $p-color: #71787E;
 
+$ap-family: Source Sans Pro;
+$ap-size: 10px;
+$ap-height: 20px;
+$ap-color: #71787E;
+
 $border: solid #DFE3E9 1px;
 
 body {
@@ -30,6 +35,7 @@ body {
     line-height: $h1-height;
     color: $h1-color;
     font-weight: $h1-weight;
+    margin-bottom: 50px;
   }
 }
 
@@ -45,11 +51,13 @@ body {
     font-size: $p-size;
     line-height: $p-height;
   }
-
-  .text-container {
-    padding-left: 27px;
-  }
 }
+
+.question-recent {
+  position: absolute;
+  width: 73.7%;
+}
+
 
 .left-recent, .right-recent {
   background-color: white;
@@ -119,3 +127,109 @@ button.recent {
   .answer-button:active {
     background-color: #1a760a;
   }
+
+.list-questions {
+
+  position: relative;
+  top: 455px;
+  padding-bottom: 40px;
+
+  .text-container {
+    padding-left: 27px;
+    background-color: white;
+    margin-top: -21px;
+    border: $border;
+    border-radius: 5px;
+
+    .title-questions {
+      color: $h1-color;
+
+      hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: $border;
+        margin: 1em 0;
+        padding: 0;
+        position: relative;
+        left: -27px;
+        width: 72.8vw;
+      }
+    }
+
+    .table-cara {
+      display: flex;
+      justify-content: space-between;
+      margin-left: -27px;
+      background-color: #f5f8fa;
+      border-bottom: $border;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      margin-top: -15px;
+      color: $p-color;
+
+      .element:nth-child(1) {
+        flex: 1;
+        margin-left: 27px;
+
+      }
+
+      .element:nth-child(2) {
+        flex: 1;
+        margin-left: 27px;
+
+      }
+    }
+
+    .table-questions {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: $border;
+
+      .date {
+        position: relative;
+        color: $p-color;
+        font-size: $p-size;
+        line-height: $p-height;
+        top: 20px;
+        right: 62px;
+      }
+
+      .element:nth-child(1) {
+        flex: 1;
+      }
+
+      .element:nth-child(2) {
+        flex: 1;
+        margin-left: 110px;
+        margin-top: 10px;
+      }
+
+      .answer-question {
+        position: relative;
+        right: 35px;
+        padding: 7px;
+        font-size: $p-size;
+        line-height: $p-height;
+        color: white;
+        background-color: #34ac45;
+        border: solid #249533 1px;
+        border-radius: 6px;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .answer-question:hover {
+        background-color: #1e960a;
+      }
+
+      .answer-question:active {
+        background-color: #1a760a;
+      }
+    }
+
+  }
+
+}

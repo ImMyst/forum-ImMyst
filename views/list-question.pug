@@ -8,17 +8,32 @@ html
     div(class="title-container")
       h1 Recent Questions
     div(class="container")
-          div(class="left-recent")
-            img(class="left" src="/img/city.jpg")
-            button(class="recent") RECENT
-            h3(class="left-title") Titre
-            span(class="date") Publié il y a 5 sec
-            button(class="answer-button") Answer to question          
-          div(class="right-recent")
-            img(class="right" src="/img/nature.jpg")
-            button(class="recent") RECENT
-            h3(class="right-title") Titre 2
-            span(class="date") Publié il y a 6 sec
-            button(class="answer-button") Answer to question
+      
+          div(class="question-recent")
+            div(class="left-recent")
+              img(class="left" src="/img/city.jpg")
+              button(class="recent") RECENT
+              h3(class="left-title") Titre
+              span(class="date") Publié il y a 5 sec
+              button(class="answer-button") Answer to question   
+                     
+            div(class="right-recent")
+              img(class="right" src="/img/nature.jpg")
+              button(class="recent") RECENT
+              h3(class="right-title") Titre 2
+              span(class="date") Publié il y a 6 sec
+              button(class="answer-button") Answer to question
             
+          div(class="list-questions")
             div(class="text-container")
+              div(class="title-questions")
+                h1 All Questions
+                hr(size="1")
+              div(class="table-cara")
+                span(class="element") Title 
+                span(class="element") Date 
+              div(class="table-questions")
+                span(class="element") Title 
+                  span(class="date") Publié il y a 5 min
+                span(class="element") 01-01-2018
+                button(class="answer-question") Answer to question

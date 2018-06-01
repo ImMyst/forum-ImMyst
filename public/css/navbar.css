@@ -44,13 +44,18 @@ html {
         .navbar ul li.logo-li button.logo img.logo {
           transform: scale(0.7);
           background: linear-gradient(#1992eb, #2ea1f8); }
+      .navbar ul li.logo-li button.logo:hover {
+        transform: scale(0.18); }
     .navbar ul li.questions-li {
       position: relative;
       right: 555px; }
     .navbar ul li.add-li {
       position: relative;
       right: 775px; }
-    .navbar ul i {
+    .navbar ul a {
       position: relative;
-      left: 75px;
-      transform: scale(1.5); }
+      left: 75px; }
+      .navbar ul a i {
+        transform: scale(1.5); }
+      .navbar ul a i:hover {
+        transform: scale(1.8); }

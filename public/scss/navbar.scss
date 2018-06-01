@@ -78,6 +78,10 @@ html {
             background: linear-gradient(#1992eb, #2ea1f8);
             }
       }
+
+      button.logo:hover {
+        transform: scale(0.18);
+      }
     }
 
     li.questions-li {
@@ -90,11 +94,18 @@ html {
       right: 775px;
     }
 
-    i {
+    a {
       position: relative;
       left: 75px;
-      transform: scale(1.5);
+
+      i {
+        transform: scale(1.5);
+      }
+
+    i:hover {
+      transform: scale(1.8);
     }
 
     }
   }
+}
