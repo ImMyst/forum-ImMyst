@@ -94,6 +94,7 @@ form {
 
   .login-button {
     font-size: $p-size;
+    font-weight: 600;
     line-height: $p-height;
     color: white;
     padding-right: 241px;
@@ -101,6 +102,7 @@ form {
     border: solid #249533 1px;
     border-radius: 6px;
     text-align: center;
+    cursor: pointer;
   }
 
   .login-button:hover {
@@ -152,6 +154,7 @@ button {
 
 .twitter:hover {
   background-color: #4ac2ff;
+  transform: scale(1);
 }
 
 .twitter:active {
@@ -164,6 +167,7 @@ button {
 
 .facebook:hover {
   background-color: #2391e3;
+  transform: scale(1);
 }
 
 .facebook:active {
@@ -176,6 +180,7 @@ button {
 
 .pinterest:hover {
   background-color: #f35337;
+  transform: scale(1);
 }
 
 .pinterest:active {
@@ -188,6 +193,7 @@ button {
 
 .dribbble:hover {
   background-color: #ea4c89;
+  transform: scale(1);
 }
 
 .dribbble:active {

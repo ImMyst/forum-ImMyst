@@ -143,7 +143,6 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-
 }
 
 .twitter {
@@ -152,6 +151,7 @@ button {
 
 .twitter:hover {
   background-color: #4ac2ff;
+  transform: scale(1);
 }
 
 .twitter:active {
@@ -164,6 +164,7 @@ button {
 
 .facebook:hover {
   background-color: #2391e3;
+  transform: scale(1);
 }
 
 .facebook:active {
@@ -176,6 +177,7 @@ button {
 
 .pinterest:hover {
   background-color: #f35337;
+  transform: scale(1);
 }
 
 .pinterest:active {
@@ -188,6 +190,7 @@ button {
 
 .dribbble:hover {
   background-color: #ea4c89;
+  transform: scale(1);
 }
 
 .dribbble:active {

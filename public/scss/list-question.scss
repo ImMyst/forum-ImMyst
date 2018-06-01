@@ -50,6 +50,7 @@ body {
     color: $p-color;
     font-size: $p-size;
     line-height: $p-height;
+
   }
 }
 
@@ -107,7 +108,7 @@ button.recent {
 
 .answer-button {
     position: relative;
-    left: 250px;
+    left: 205px;
     bottom: 15px;
     padding: 7px;
     font-size: $p-size;
@@ -229,7 +230,5 @@ button.recent {
         background-color: #1a760a;
       }
     }
-
   }
-
 }

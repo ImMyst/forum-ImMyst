@@ -1,6 +1,7 @@
 html
   head
     include navbar.pug
+    title Stock Overflowx - Questions List
     link(rel="stylesheet" href="css/list-question.css")
     link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet")
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -13,15 +14,15 @@ html
             div(class="left-recent")
               img(class="left" src="/img/city.jpg")
               button(class="recent") RECENT
-              h3(class="left-title") Titre
-              span(class="date") Publié il y a 5 sec
+              h3(class="left-title") Title
+              span(class="date") Published 60 days ago
               button(class="answer-button") Answer to question   
                      
             div(class="right-recent")
               img(class="right" src="/img/nature.jpg")
               button(class="recent") RECENT
-              h3(class="right-title") Titre 2
-              span(class="date") Publié il y a 6 sec
+              h3(class="right-title") Title 2
+              span(class="date") Published 60 seconds ago
               button(class="answer-button") Answer to question
             
           div(class="list-questions")
@@ -34,6 +35,6 @@ html
                 span(class="element") Date 
               div(class="table-questions")
                 span(class="element") Title 
-                  span(class="date") Publié il y a 5 min
+                  span(class="date") Published 5 days ago
                 span(class="element") 01-01-2018
                 button(class="answer-question") Answer to question
