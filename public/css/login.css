@@ -52,7 +52,7 @@ form {
     width: 100%; }
   form input:focus {
     background-color: #edeff2; }
-  form span {
+  form label {
     font-size: 12px;
     font-weight: 600;
     color: #71787E;

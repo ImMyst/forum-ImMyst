@@ -1,6 +1,7 @@
 html
   head
     title Stock Overflowx - Register
+    link(rel="icon" type="image/png" href="/icons/favicon.png")
     link(rel="stylesheet" href="/css/register.css")
     link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet")
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -13,14 +14,12 @@ html
         div(class="title")
           h3 Welcome! Please register.
         div(class="form")
-          form(action="/")
-            span E-mail address
-            input(type="email" name="email" placeholder="exemple@exemple.com")
-            span Username
-            input(type="text" name="username" placeholder="Username")
-            span Password
-            input(type="password" name="password" placeholder="Ex : password")
-            span Confirm Password
+          form(method="post")
+            label(for="email") E-mail address
+            input(type="email" name="email" placeholder="Ex : exemple@exemple.com")
+            label(for="username") Username
+            input(type="text" name="username" placeholder="Ex : LeDieuDeLyon69")
+            label(for="password") Password
             input(type="password" name="password" placeholder="Ex : password")
             input(class="login-button" type="submit" value="Register to Stock Overflowx")
         hr 

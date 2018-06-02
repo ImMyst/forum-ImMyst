@@ -84,7 +84,7 @@ form {
     background-color: #edeff2;
   }
 
-  span {
+  label {
     font-size: $p-size;
     font-weight: 600;
     color: $p-color;
@@ -101,6 +101,7 @@ form {
     border: solid #249533 1px;
     border-radius: 6px;
     text-align: center;
+    cursor: pointer;
   }
 
   .login-button:hover {

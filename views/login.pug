@@ -14,10 +14,10 @@ html
         div(class="title")
           h3 Welcome! Please login.
         div(class="form")
-          form(action="/")
-            span Login with your e-mail address
+          form(action='/login' method="post")
+            label(for="email") Login with your e-mail address
             input(type="email" name="mail" placeholder="Ex : exemple@exemple.com")
-            span Password
+            label(for="password") Password
             input(type="password" name="password" placeholder="Ex : password")
             input(class="login-button" type="submit" value="Login to Questions")
         hr 
