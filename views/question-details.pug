@@ -6,23 +6,23 @@ html
         link(rel="stylesheet", href="/css/question-details.css")
     body
       div(class="container-question")
-          div(class="question-left")
+          div(class="question")
               h2 #{question.title}
-              p #{question.content}                  
-                  div(class="question-content")
-                      p #{comment.content}
-                  div(class="question-form")
-                      div(class="resolved")
-                                  form(method="post", action="/question/" + question.id + "/resolved")
-                                      button(type='submit') Resolved
-                              
-                                  form(method="post", action="/question/" + question.id + "/resolved")
-                                      div(class="green")
-                                          button(type='submit') Unresolved
-                      form(action='/comment/' + question.id, method='post')
-                          label(for='content') Your Answser
-                          textarea(class="text" id='content' name='content')
-                          div(class="right")
-                              button(type='submit') Send
-            
-                  a(href="/login") Add a comment
+               div(class="resolved")
+                button(type='submit') Unresolved
+              p #{question.content}
+              hr(size="1")
+              //- Comments display not working due to undefined id of comment
+              
+              //- for comment in question.comments
+                comment
+                div(class="quest-content")
+                    h3 #{comment.user.username} - #{comment.createdAt}
+                    p #{comment.content}
+              div(class="question-form")
+                  form(action='/question-details/' + question.id, method='post')
+                    label(for='content') Your Answser
+                    textarea(class="text" id='content' name='content')
+                    div(class="button-send")
+                        button(type='submit') Send
+        

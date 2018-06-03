@@ -177,7 +177,7 @@ app.post('/question-details/:questionId/dropped', (req, res) => {
 });
 
 
-app.get('/question/:questionId/edit-question', (req, res) => {
+app.get('/question-details/:questionId/edit-question', (req, res) => {
     const { title, content } = req.body;
     Question
         .sync()
@@ -185,7 +185,7 @@ app.get('/question/:questionId/edit-question', (req, res) => {
         .then((question) => res.render('edit-question', {question, user: req.user}));
 });
 
-app.post('/question/:questionId/edit-question', (req, res) => {
+app.post('/question-details/:questionId/edit-question', (req, res) => {
     const { title, content } = req.body;
     Question
         .sync()
@@ -193,7 +193,7 @@ app.post('/question/:questionId/edit-question', (req, res) => {
         .then((question) => res.redirect('/question/'+ req.params.questionId));
 });
 
-app.post('/comment/:questionId', (req, res) => {
+app.post('/question-details/:questionId', (req, res) => {
     const { content } = req.body;
     Comment
         .sync()
@@ -201,14 +201,15 @@ app.post('/comment/:questionId', (req, res) => {
         .then(() => res.redirect('/question/'+ req.params.questionId));
 });
 
-app.get('/comment/:questionId/edit-comment', (req, res) => {
+app.get('/question-details/:questionId/edit-comment', (req, res) => {
     const { title, content } = req.body;
     Comment
         .sync()
         .then(() => Comment.findOne({where: {id: req.params.questionId}, include: [User] }))
         .then((comment) => res.render('edit-comment', {comment,user: req.user}));
 });
-app.post('/comment/:commentId/edit-comment', (req, res) => {
+
+app.post('/question-details/:commentId/edit-comment', (req, res) => {
     const { content } = req.body;
     Comment
         .sync()
