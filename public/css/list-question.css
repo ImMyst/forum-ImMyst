@@ -68,7 +68,7 @@ button.recent {
   margin-top: 17px;
   border-radius: 5px; }
 
-.answer-button {
+.details-button {
   position: relative;
   left: 205px;
   bottom: 15px;
@@ -82,10 +82,10 @@ button.recent {
   text-align: center;
   cursor: pointer; }
 
-.answer-button:hover {
+.details-button:hover {
   background-color: #1e960a; }
 
-.answer-button:active {
+.details-button:active {
   background-color: #1a760a; }
 
 .list-questions {
@@ -109,7 +109,8 @@ button.recent {
         padding: 0;
         position: relative;
         left: -27px;
-        width: 72.8vw; }
+        width: 72.8vw;
+        top: 1px; }
     .list-questions .text-container .table-cara {
       display: flex;
       justify-content: space-between;
@@ -127,37 +128,49 @@ button.recent {
         flex: 1;
         margin-left: 27px; }
     .list-questions .text-container .table-questions {
-      display: flex;
-      justify-content: space-between;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      margin-bottom: solid #DFE3E9 1px; }
-      .list-questions .text-container .table-questions .date {
+      width: 100%; }
+      .list-questions .text-container .table-questions hr {
+        padding-bottom: 5px;
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: solid #DFE3E9 1px;
+        margin: 1em 0;
         position: relative;
-        color: #71787E;
-        font-size: 12px;
-        line-height: 22px;
-        top: 20px;
-        right: 62px; }
-      .list-questions .text-container .table-questions .element:nth-child(1) {
-        flex: 1; }
-      .list-questions .text-container .table-questions .element:nth-child(2) {
-        flex: 1;
-        margin-left: 110px;
-        margin-top: 10px; }
-      .list-questions .text-container .table-questions .answer-question {
-        position: relative;
-        right: 35px;
-        padding: 7px;
-        font-size: 12px;
-        line-height: 22px;
-        color: white;
-        background-color: #34ac45;
-        border: solid #249533 1px;
-        border-radius: 6px;
-        text-align: center;
-        cursor: pointer; }
-      .list-questions .text-container .table-questions .answer-question:hover {
-        background-color: #1e960a; }
-      .list-questions .text-container .table-questions .answer-question:active {
-        background-color: #1a760a; }
+        left: -27px;
+        width: 72.8vw;
+        top: -17px; }
+      .list-questions .text-container .table-questions .block {
+        display: flex;
+        justify-content: space-between;
+        width: 100%; }
+        .list-questions .text-container .table-questions .block .title {
+          position: relative;
+          bottom: 10px; }
+        .list-questions .text-container .table-questions .block .date {
+          position: relative;
+          color: #71787E;
+          font-size: 12px;
+          line-height: 22px;
+          bottom: 10px;
+          left: -75px; }
+        .list-questions .text-container .table-questions .block .details-question {
+          position: relative;
+          right: 35px;
+          padding: 7px;
+          bottom: 17px;
+          font-size: 12px;
+          line-height: 22px;
+          color: white;
+          background-color: #34ac45;
+          border: solid #249533 1px;
+          border-radius: 6px;
+          text-align: center;
+          cursor: pointer; }
+        .list-questions .text-container .table-questions .block span {
+          width: 33%;
+          color: #71787E; }
+        .list-questions .text-container .table-questions .block .details-question:hover {
+          background-color: #1e960a; }
+        .list-questions .text-container .table-questions .block .details-question:active {
+          background-color: #1a760a; }

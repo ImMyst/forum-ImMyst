@@ -1,0 +1,28 @@
+html
+    head
+        include navbar.pug
+        title Stock Overflowx - Questions Details
+        link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet")
+        link(rel="stylesheet", href="/css/question-details.css")
+    body
+      div(class="container-question")
+          div(class="question-left")
+              h2 #{question.title}
+              p #{question.content}                  
+                  div(class="question-content")
+                      p #{comment.content}
+                  div(class="question-form")
+                      div(class="resolved")
+                                  form(method="post", action="/question/" + question.id + "/resolved")
+                                      button(type='submit') Resolved
+                              
+                                  form(method="post", action="/question/" + question.id + "/resolved")
+                                      div(class="green")
+                                          button(type='submit') Unresolved
+                      form(action='/comment/' + question.id, method='post')
+                          label(for='content') Your Answser
+                          textarea(class="text" id='content' name='content')
+                          div(class="right")
+                              button(type='submit') Send
+            
+                  a(href="/login") Add a comment

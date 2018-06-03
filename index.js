@@ -25,6 +25,7 @@ const User = db.define('user', {
 const Question = db.define('question', {
     title: { type : Sequelize.STRING},
     content: { type: Sequelize.STRING},
+    createdAt: {type: Sequelize.DATE},
     resolvedAt: { type: Sequelize.DATE}
 
 });
@@ -115,8 +116,8 @@ app.get('/login', (req, res) => {
 
 app.post('/login',
     passport.authenticate('local', {
-        successRedirect: '/list-question',
-        failureRedirect: '/login'
+        failureRedirect: '/list-question',
+        sucessRedirect: '/login'
     })
 );
 
@@ -148,27 +149,27 @@ app.post('/add-question', (req, res) => {
     const { title, content } = req.body;
     Question
         .sync()
-        .then(() => Question.create({ title, content, userId: req.user.id }))
+        .then(() => Question.create({ title, content }))
         .then(() => res.redirect('/list-question'));
 });
 
 
-app.get('/question/:questionId', (req, res) => {
+app.get('/question-details/:questionId', (req, res) => {
     const { title, content } = req.body;
     Question
         .sync()
         .then(() => Question.findOne({where: {id: req.params.questionId} , include:[{model: Comment,include:[User]}, User ]}))
-        .then((question) => res.render('question', {question, user: req.user}));
+        .then((question) => res.render('question-details', {question, user: req.user}));
 });
 
-app.post('/question/:questionId/resolved', (req, res) => {
+app.post('/question-details/:questionId/resolved', (req, res) => {
     Question
         .sync()
         .then(() => Question.update({ resolvedAt: new Date()}, {where: {id: req.params.questionId}}))
-        .then(()=> res.redirect('/question/'+ req.params.questionId));
+        .then(()=> res.redirect('/question-details/'+ req.params.questionId));
 });
 
-app.post('/question/:questionId/dropped', (req, res) => {
+app.post('/question-details/:questionId/dropped', (req, res) => {
     Question
         .sync()
         .then(() => Question.destroy( {where: {id: req.params.questionId}}))
