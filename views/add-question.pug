@@ -12,9 +12,9 @@ html
         div(class="text-container")
           div(class="form")
             h3(class="title") Question
-            form 
-              span Title 
+            form(action='add-question' method='post')
+              label(for="title") Title 
               input(type="text" name="title" placeholder="Ex : How to use a flexbox ?")
-              span Description
-              textarea(type="text" name="description" placeholder="Ex : My flexbox did not work ?")
+              label(for="content") Description
+              textarea(type="text" name="content" placeholder="Ex : My flexbox did not work ?")
               input(class="add-question-button" type="submit" value="Post Your Question") 
