@@ -1,11 +1,10 @@
 # Project Web Ynov
-## by Titouan GALVANI
+### by Titouan GALVANI
 
-### Start server + compile SASS
+#### Start server + compile SASS
 
-``` gulp
+```
+gulp
 ```
 
-#### It will start the server on 'localhost:3000' and compile SASS files into CSS.
-
- 
+###### It will start the server on `localhost:3000` and compile SASS files into CSS.
